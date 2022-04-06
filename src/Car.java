@@ -85,6 +85,7 @@ public class Car {
         }
         
         Car Car = new Car(modelo, speed, speedup, march, ligar, direct, marchUp);
+        carro.close();
     }
 
     public Car(String model, int velocity, Boolean aceleration, int march, Boolean onOff, int direcao, int passMarch) {
