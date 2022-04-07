@@ -16,11 +16,15 @@ public class Car {
         ligar(OnFf);
         if (OnFf == true) {
             int marcha = 0;
-            int velocidade = 0;
+            int velocidade;
             int aceleracao = 0;
 
-            marchUpDown(marcha);
-            acelerar(aceleracao);
+            int newMarcha = marchUpDown(marcha);
+            int newAceleracao = acelerar(aceleracao);
+            for (velocidade = 0; velocidade == newAceleracao; velocidade++) {
+                System.out.println(velocidade);
+            }
+
         }
     }
 
@@ -62,7 +66,8 @@ public class Car {
                     marcha += 1;
                     break;
             }
-        }if (resp=="Diminuir") {
+        }
+        if (resp == "Diminuir") {
             switch (marcha) {
                 case 5: // neutra
                     marcha -= 1;
@@ -84,7 +89,7 @@ public class Car {
                     break;
             }
         } else {
-            marcha*=1;
+            marcha *= 1;
         }
         march.close();
         return marcha;
@@ -95,12 +100,12 @@ public class Car {
         System.out.println("Quer acelerar o carro? S/n");
         String resp = aclr.next();
 
-        if(resp=="S"){
+        if (resp == "S") {
             System.out.println("Quanto quer acelerar? Max.: 220Km/h");
             int aceleracaoUp = aclr.nextInt();
-            aceleracao = (aceleracao+aceleracaoUp);
-        }else{
-            aceleracao*=1;
+            aceleracao = (aceleracao + aceleracaoUp);
+        } else {
+            aceleracao *= 1;
         }
 
         aclr.close();
