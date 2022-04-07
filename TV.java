@@ -38,7 +38,7 @@ public class TV {
 
         // ligar ou delisgar
         ligar(OnFf);
-        if (OnFf==ture){
+        if (OnFf==true){
             volume = 5;
             canal = 1;
         }
@@ -48,7 +48,7 @@ public class TV {
         // mudar de canal
         canalUp(canal);
 
-        // TV = new TV();
+         TV = new TV(polegadas, volume, marca, voltagem, canal, consumo);
     }
 
     public void ligar(Bolean OnFf) {
